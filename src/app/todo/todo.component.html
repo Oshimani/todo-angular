@@ -1,0 +1,33 @@
+<mat-card class="md-accent">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <!-- IMPORTANCE ICON -->
+      <mat-icon class="importance-select">{{getImportanceIcon()}}</mat-icon>
+    </div>
+
+    <mat-card-title>
+      <!-- TODO NAME -->
+        <div class="mat-display-1">{{todo.name}}</div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- TODO DESCRIPTION -->
+    <div class="mat-body description">{{todo.description}}</div>
+  </mat-card-content>
+
+  <!-- TODO ACTIONS -->
+  <mat-card-actions class="actions">
+    <button (click)="onClickComplete()"
+            color="primary"
+            mat-fab>
+      <mat-icon aria-label="label">done_outline</mat-icon>
+    </button>
+
+    <button (click)="onClickDelete()"
+            color="accent"
+            mat-fab>
+      <mat-icon aria-label="label">delete_outline</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

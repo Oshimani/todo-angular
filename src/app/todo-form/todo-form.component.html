@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar>
+      <!-- ISIMPORTANT BUTTON -->
+      <button mat-icon-button
+              [matMenuTriggerFor]="menu">
+        <mat-icon class="importance-select">{{getImportanceIcon()}}</mat-icon>
+      </button>
+      <!-- IMPORTANCE MENU -->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item
+                (click)="onClickImportant(false)">
+          <mat-icon>assignment</mat-icon>
+          <span>Common</span>
+        </button>
+
+        <button mat-menu-item
+                (click)="onClickImportant(true)">
+          <mat-icon>offline_bolt</mat-icon>
+          <span>Important</span>
+        </button>
+      </mat-menu>
+    </div>
+
+    <mat-card-title>
+      <!-- TODO NAME -->
+      <mat-form-field class="input">
+        <input matInput
+               [(ngModel)]="todo.name"
+               placeholder="Add your title here">
+      </mat-form-field>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- TODO DESCRIPTION -->
+    <mat-form-field class="input">
+      <textarea rows="3"
+                matInput
+                [(ngModel)]="todo.description"
+                placeholder="Add your description here"></textarea>
+    </mat-form-field>
+  </mat-card-content>
+
+  <!-- TODO ACTIONS -->
+  <mat-card-actions>
+    <button (click)="onClickAdd()"
+            color="primary"
+            mat-fab>
+      <mat-icon aria-label="label">add</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
